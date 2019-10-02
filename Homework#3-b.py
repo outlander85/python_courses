@@ -1,3 +1,3 @@
-stroka = input('Введите строку из нескольких слов, разделенных пробелами')
-
-for i in range
+s = '   one two   three    четырнадцать   '
+s1 = ' '.join(s.split())
+print(s1)
