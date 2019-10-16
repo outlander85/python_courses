@@ -1,11 +1,12 @@
-s = 'dfgmdflkbmh09_'
+import temp
 
-for i in range(len(s)):
-    if not ('a' <= s[0] <= 'z' or s[0] == '_'):
-        print('no')
-        quit()
+typp = input('Введите К, П, или Т').lower()
 
-    if not (('a' <= s[i].lower() <= 'z') or ('0' <= s[i] <= '9') or (s[i] == '_')):
-        print('no')
-        quit()
-print('yes')
+if typp == 'к':
+    print(temp.sqr_circle())
+elif typp == 'п':
+    print(temp.sqr_pr())
+elif typp == 'т':
+    print(temp.sqr_triangle())
+else:
+    print('Error')
