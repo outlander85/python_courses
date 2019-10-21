@@ -17,15 +17,16 @@ print(t4['name'], str(t4['cnt'])+'pcs', str(t4['price'])+'$')
 
 while inn:
     inn = int(input('Enter invnum (1-4), (0 = write changes)'))
-    c = int(input('Enter new count:'))
-    if inn == t1['invnum']:
-        c1 = c
-    elif inn == t2['invnum']:
-        c2 = c
-    elif inn == t3['invnum']:
-        c3 = c
-    else:
-        c4 = c
+    if inn != 0:
+        c = int(input('Enter new count:'))
+        if inn == t1['invnum']:
+            c1 = c
+        elif inn == t2['invnum']:
+            c2 = c
+        elif inn == t3['invnum']:
+            c3 = c
+        else:
+            c4 = c
 t1['cnt'] = c1
 t2['cnt'] = c2
 t3['cnt'] = c3
