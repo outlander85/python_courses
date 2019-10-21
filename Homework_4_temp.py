@@ -5,4 +5,3 @@ def convert_to_binary(x):
         res = str(x % 2) + res
         x = x // 2
     print(res)
-

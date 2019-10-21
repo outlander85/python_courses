@@ -1,25 +1,18 @@
-import math
+from random import randint
 
-def sqr_circle():
-    r = float(input('Введите радиус:'))
-    pl = math.pi * (r ** 2)
-    return pl
+n = 10
+arr = []
+for i in range(n):
+    arr.append(randint(-100, 100))
 
+print(arr)
 
-def sqr_pr():
-    a = float(input('Введите сторону a:'))
-    b = float(input('Введите сторону b:'))
+res = 0
+j = 0
 
-    pl = a * b
-    return pl
-
-
-def sqr_triangle():
-
-    a = float(input('Введите сторону a:'))
-    b = float(input('Введите сторону b:'))
-    c = float(input('Введите сторону c:'))
-
-    p = (a + b + c) /2
-    pl = math.sqrt(p * (p - a) * (p - b) * (p - c))
-    return pl
+while j < len(arr):
+    if arr[j] < 0:
+        del(arr[j])
+    else:
+        j += 1
+print(arr)
