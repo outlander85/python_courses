@@ -25,6 +25,7 @@ def printSumMass(mass):
             total += int(mass[j][i])
             # print(total)
         t.append(total)
+
     return t
 
 mass, N = readMass('file_hw_6_1.txt')
@@ -33,3 +34,9 @@ print('  --'*N)
 # printSumMass(mass)
 re = printSumMass(mass)
 print(re)
+
+num = 1
+for i in range(1, len(re)):
+    if re[i] < re[num]:
+        num = i
+print(num)
