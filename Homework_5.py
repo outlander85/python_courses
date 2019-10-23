@@ -32,7 +32,7 @@ t2['cnt'] = c2
 t3['cnt'] = c3
 t4['cnt'] = c4
 
-print(t1['name'], str(t1['cnt'])+'pcs', str(t1['price'])+'$')
+print(t1['name'], str(t1['cnt'])+'pcs', str(t1['price'])+'$'
 print(t2['name'], str(t2['cnt'])+'pcs', str(t2['price'])+'$')
 print(t3['name'], str(t3['cnt'])+'pcs', str(t3['price'])+'$')
 print(t4['name'], str(t4['cnt'])+'pcs', str(t4['price'])+'$')
