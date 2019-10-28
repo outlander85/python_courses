@@ -80,17 +80,11 @@ import math
 
 sqr_circle = lambda r: math.pi * (r ** 2)
 
-def sqr_pr():
-    a = float(input('Введите сторону a:'))
-    b = float(input('Введите сторону b:'))
+def sqr_pr(a, b):
     return a * b
 
 
-def sqr_triangle():
-
-    a = float(input('Введите сторону a:'))
-    b = float(input('Введите сторону b:'))
-    c = float(input('Введите сторону c:'))
+def sqr_triangle(a, b, c):
     p = (a + b + c) /2
     return math.sqrt(p * (p - a) * (p - b) * (p - c))
 
@@ -99,8 +93,8 @@ typp = input('Введите К, П, или Т').lower()
 if typp == 'к':
     print(sqr_circle(float(input('Введите радиус:'))))
 elif typp == 'п':
-    print(sqr_pr())
+    print(sqr_pr(float(input('Введите сторону a:')), float(input('Введите сторону b:'))))
 elif typp == 'т':
-    print(sqr_triangle())
+    print(sqr_triangle(float(input('Введите сторону a:')), float(input('Введите сторону b:')), float(input('Введите сторону c:'))))
 else:
     print('Error')
