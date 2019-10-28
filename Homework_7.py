@@ -1,3 +1,7 @@
+#####################################################################################################
+# FIRST TASK
+#####################################################################################################
+
 name = 0
 surname = 1
 cclass = 2
@@ -68,3 +72,43 @@ print(file[getIOlder(file)])
 print()
 print('Самый младший:')
 print(file[getIYounger(file)])
+
+#####################################################################################################
+# SECOND TASK
+#####################################################################################################
+
+import math
+
+typp = input('Введите К, П, или Т').lower()
+
+if typp == 'к':
+    print(sqr_circle())
+elif typp == 'п':
+    print(sqr_pr())
+elif typp == 'т':
+    print(sqr_triangle())
+else:
+    print('Error')
+
+# 2d part
+
+
+
+def sqr_circle():
+    r = float(input('Введите радиус:'))
+    return math.pi * (r ** 2)
+
+
+def sqr_pr():
+    a = float(input('Введите сторону a:'))
+    b = float(input('Введите сторону b:'))
+    return a * b
+
+
+def sqr_triangle():
+
+    a = float(input('Введите сторону a:'))
+    b = float(input('Введите сторону b:'))
+    c = float(input('Введите сторону c:'))
+    p = (a + b + c) /2
+    return math.sqrt(p * (p - a) * (p - b) * (p - c))

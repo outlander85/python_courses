@@ -608,6 +608,76 @@ test_fun = fun1(4)
 
 print(test_fun(7))
 #################################################################################
+name = 0
+surname = 1
+cclass = 2
+DOB = 3
+day = 0
+month = 1
+year = 2
+users = []
+
+def readDB(path):
+    users = []
+    for line in open(path):
+        tUser = []
+        for i in line.split(' '):
+            tUser.append(i.split('=')[1])
+        users.append(tUser)
+    return users
+
+def printDB(dbName):
+    for users in dbName:
+        print('name=%-12s surname=%-12s class=%-5s birthday=%-10s' % (users[name], users[surname], users[cclass], users[DOB]), end = '')
+
+
+
+def older(arg1, arg2):
+    if (int(arg1[2]) < int(arg2[2])):
+        return True
+    elif (int(arg1[2]) == int(arg2[2]) and int(arg1[1]) < int(arg2[1])):
+        return True
+    elif (int(arg1[2]) == int(arg2[2]) and int(arg1[1]) == int(arg2[1]) and int(arg1[0]) < int(arg2[0])):
+        return True
+
+    return False
+
+def getIOlder(dbName):
+    iOlderUser = 0
+    for i in range(1, len(dbName)):
+        date = dbName[i][DOB].split('.')
+        dateOlder = dbName[iOlderUser][DOB].split('.')
+        if older (date, dateOlder):
+            iOlderUser = i
+    return iOlderUser
+
+def younger(arg1, arg2):
+    if (int(arg1[2]) > int(arg2[2])):
+        return True
+    elif (int(arg1[2]) == int(arg2[2]) and int(arg1[1]) > int(arg2[1])):
+        return True
+    elif (int(arg1[2]) == int(arg2[2]) and int(arg1[1]) == int(arg2[1]) and int(arg1[0]) > int(arg2[0])):
+        return True
+
+    return False
+
+def getIYounger(dbName):
+    iYoungerUser = 0
+    for i in range(1, len(dbName)):
+        date = dbName[i][DOB].split('.')
+        dateOlder = dbName[iYoungerUser][DOB].split('.')
+        if older (date, dateOlder):
+            iOlderUser = i
+    return iYoungerUser
+
+file = readDB('input.txt')
+printDB(file)
+print()
+print('Самый старший:')
+print(file[getIOlder(file)])
+print()
+print('Самый младший:')
+print(file[getIYounger(file)])
 #################################################################################
 #################################################################################
 #################################################################################
