@@ -1,7 +1,6 @@
 #####################################################################################################
 # FIRST TASK
 #####################################################################################################
-
 name = 0
 surname = 1
 cclass = 2
@@ -79,25 +78,7 @@ print(file[getIYounger(file)])
 
 import math
 
-typp = input('Введите К, П, или Т').lower()
-
-if typp == 'к':
-    print(sqr_circle())
-elif typp == 'п':
-    print(sqr_pr())
-elif typp == 'т':
-    print(sqr_triangle())
-else:
-    print('Error')
-
-# 2d part
-
-
-
-def sqr_circle():
-    r = float(input('Введите радиус:'))
-    return math.pi * (r ** 2)
-
+sqr_circle = lambda r: math.pi * (r ** 2)
 
 def sqr_pr():
     a = float(input('Введите сторону a:'))
@@ -112,3 +93,14 @@ def sqr_triangle():
     c = float(input('Введите сторону c:'))
     p = (a + b + c) /2
     return math.sqrt(p * (p - a) * (p - b) * (p - c))
+
+typp = input('Введите К, П, или Т').lower()
+
+if typp == 'к':
+    print(sqr_circle(float(input('Введите радиус:'))))
+elif typp == 'п':
+    print(sqr_pr())
+elif typp == 'т':
+    print(sqr_triangle())
+else:
+    print('Error')
