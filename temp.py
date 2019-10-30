@@ -1,70 +1,27 @@
-name = 0
-surname = 1
-cclass = 2
-DOB = 3
-day = 0
-month = 1
-year = 2
-users = []
+import math
 
-def readDB(path):
-    users = []
-    for line in open(path):
-        tUser = []
-        for i in line.split(' '):
-            tUser.append(i.split('=')[1])
-        users.append(tUser)
-    return users
+class Circle:
+    def __init__(self, r):
+        self.r = r
 
-def printDB(dbName):
-    for users in dbName:
-        print('name=%-12s surname=%-12s class=%-5s birthday=%-10s' % (users[name], users[surname], users[cclass], users[DOB]), end = '')
+    def getSquare(self):
+        return math.pi * self.r**2
 
 
+class Rectangle:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
 
-def older(arg1, arg2):
-    if (int(arg1[2]) < int(arg2[2])):
-        return True
-    elif (int(arg1[2]) == int(arg2[2]) and int(arg1[1]) < int(arg2[1])):
-        return True
-    elif (int(arg1[2]) == int(arg2[2]) and int(arg1[1]) == int(arg2[1]) and int(arg1[0]) < int(arg2[0])):
-        return True
+    def getSquare(self):
+        return self.a * self.b
 
-    return False
+class Triangle:
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
 
-def getIOlder(dbName):
-    iOlderUser = 0
-    for i in range(1, len(dbName)):
-        date = dbName[i][DOB].split('.')
-        dateOlder = dbName[iOlderUser][DOB].split('.')
-        if older (date, dateOlder):
-            iOlderUser = i
-    return iOlderUser
-
-def younger(arg1, arg2):
-    if (int(arg1[2]) > int(arg2[2])):
-        return True
-    elif (int(arg1[2]) == int(arg2[2]) and int(arg1[1]) > int(arg2[1])):
-        return True
-    elif (int(arg1[2]) == int(arg2[2]) and int(arg1[1]) == int(arg2[1]) and int(arg1[0]) > int(arg2[0])):
-        return True
-
-    return False
-
-def getIYounger(dbName):
-    iYoungerUser = 0
-    for i in range(1, len(dbName)):
-        date = dbName[i][DOB].split('.')
-        dateYounger = dbName[iYoungerUser][DOB].split('.')
-        if younger (date, dateYounger):
-            iYoungerUser = i
-    return iYoungerUser
-
-file = readDB('input.txt')
-printDB(file)
-print()
-print('Самый старший:')
-print(file[getIOlder(file)])
-print()
-print('Самый младший:')
-print(file[getIYounger(file)])
+    def getSquare(self):
+        p = (self.a + self.b + self.c) / 2
+        return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))

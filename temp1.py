@@ -1,38 +1,24 @@
-def readMass(path):
-    file = open(path)
-    N = 0
-    mass = []
-    for line in file:
-        row = line.strip().split('  ')
-        mass.append(row)
-        N += 1
-    file.close()
-    return mass, N
+import temp
 
+# choice = input('Круг(к), прямоугольник(п), или треугольник(т):')
 
-def printMass(mass):
-    for i in range(len(mass)):
-        for j in range(len(mass[i])):
-            print('%4s'%mass[i][j], end='')
-        print()
+fi
 
+for i in range(3)
 
-mass, N = readMass('file_2.txt')
-printMass(mass)
+if choice == 'к':
+    figure = temp.Circle(float(input('Радиус:')))
+elif choice == 'п':
+    l = float(input('Длина:'))
+    w = float(input('Ширина:'))
 
+    figure = temp.Rectangle(w, l)
 
-def change (mass):
-    for i in range(len(mass)):
-        for j in range(len(mass[i])):
-            if i == j:
-                mass[i][j], mass[i][len(mass)-1-j] = mass[i][len(mass)-1-j], mass[i][j]
-    return mass
+elif choice == 'т':
+    a = float(input('Первая сторона:'))
+    b = float(input('Вторая сторона:'))
+    c = float(input('Третья сторона:'))
 
-res = change(mass)
+    figure = temp.Triangle(a, b, c)
 
-print()
-
-printMass(res)
-
-
-
+print(figure.getSquare())
