@@ -4,7 +4,7 @@ figuresList = []
 
 
 for i in range(3):
-    choice = input.lower()("Круг(к), прямоугольник(п) или треугольник(т): ")
+    choice = input("Круг(к), прямоугольник(п) или треугольник(т): ")
 
     if choice == 'к':
         figure = figures.Circle(float(input("Радиус: ")))
