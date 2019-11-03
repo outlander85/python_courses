@@ -1,27 +1,22 @@
-import math
-
-class Circle:
-    def __init__(self, r):
-        self.r = r
-
-    def getSquare(self):
-        return math.pi * self.r**2
+from openpyxl import load_workbook
+import matplotlib.pyplot as plt
 
 
-class Rectangle:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
+wb = load_workbook(r"C:\Users\ihor.ivchenko\PycharmProjects\python_courses\file.xlsx")
 
-    def getSquare(self):
-        return self.a * self.b
+# help(wb)
 
-class Triangle:
-    def __init__(self, a, b, c):
-        self.a = a
-        self.b = b
-        self.c = c
+sheet = wb.active
 
-    def getSquare(self):
-        p = (self.a + self.b + self.c) / 2
-        return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
+# print(sheet.max_column)
+# print(sheet.max_row)
+
+x = []
+y = []
+
+for row in range(1, sheet.max_row + 1):
+    x.append(sheet.cell(row=row, column=1).value)
+    y.append(sheet.cell(row=row, column=2).value)
+
+plt.plot(x, y)
+plt.show()

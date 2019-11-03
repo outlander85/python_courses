@@ -2,8 +2,8 @@ import figures
 
 figuresList = []
 
-
 for i in range(3):
+
     choice = input("Круг(к), прямоугольник(п) или треугольник(т): ")
 
     if choice == 'к':
@@ -22,11 +22,13 @@ for i in range(3):
         c = float(input("Третья сторона: "))
 
         figure = figures.Triangle(a, b, c)
+    else:
+        print('Error')
+        quit()
 
     figuresList.append(figure)
 
 choice1 = input("Вывести площадь(пл), или периметр(пр)?")
-
 
 maxS = 0
 maxP = 0
@@ -44,7 +46,6 @@ for i in figuresList:
         maxP = p
         name_p = i.name
 
-
 if choice1 == 'пл':
     print()
     print('Максимальная площадь у: ' + name_s + 'а - ' + str(maxS) + ' кв. сантиметров')
@@ -53,3 +54,4 @@ elif choice1 == 'пр':
     print('Максимальный периметр у: ' + name_p + 'а - ' + str(maxP) + ' сантиметров')
 else:
     print('Error')
+    quit()
