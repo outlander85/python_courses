@@ -62,12 +62,11 @@ if otvet == z:
 elif otvet !=  z:
     print('Ответ не верный, правильный ответ:' + str(otvet))
 
-import this
 ##
 from math import pi, sqrt
 print(sqrt(pi))
 #################################################################################
-from math import pi, sqrt
+from math import sqrt
 # print(sqrt(pi))
 ## Просим ввести числа у пользователя
 a = int(input('Введите число a:'))
@@ -197,7 +196,6 @@ res = re.split('W', 'Hello World')
 print(res)
 
 #################################################################################
-import re
 f = str(input('Введите фразу:'))
 f1 = f.replace(' ', '')
 
@@ -271,7 +269,7 @@ def addAndDiff(x, y):
     return x+y, x-y
 print(addAndDiff(5,9))
 #################################################################################
-import temp
+from HomeWorks import temp
 
 typp = input('Введите К, П, или Т').lower()
 
