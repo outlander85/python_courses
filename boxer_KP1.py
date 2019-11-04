@@ -9,5 +9,9 @@
 Доп. задание: добавить выбор удара и выбор блока
 """
 
-class Boxer:
-    def __init__(self):
+
+def pr_to_file(pr, log):
+    f = open(log, 'a')
+    print(pr)
+    f.write(pr + '\n')
+    f.close()
