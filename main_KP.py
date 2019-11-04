@@ -10,6 +10,7 @@
 """
 # import boxer_KP
 import boxer_KP1
+import datetime
 from random import randint as ri
 
 #Game parameters
@@ -23,6 +24,7 @@ f = open(log, 'w')
 f.write('Start Logging\n')
 f.close()
 
+
 # receiving player's name
 p_name = input(str(print("Hello, please enter your name:")))
 p_name = p_name.capitalize()
@@ -33,6 +35,12 @@ else:
     p_name = "Anonymous player"
 
 c_name = 'Computer'
+
+
+pr = "Player's name: " + p_name + ', health = ' + str(p_health)
+boxer_KP1.pr_to_file(pr, log)
+pr = "Computer's name: " + c_name + ', health = ' + str(c_health)
+boxer_KP1.pr_to_file(pr, log)
 
 pr = ('Starting battle: ' + p_name + ' VS ' + c_name)
 boxer_KP1.pr_to_file(pr, log)
@@ -54,8 +62,8 @@ else:
     pr = (c_name + " starts first.")
     boxer_KP1.pr_to_file(pr, log)
 
-pr = (p_name + "'s" + " health: " + str(p_health) + "; " + c_name + "'s" + " health: " + str(c_health))
-boxer_KP1.pr_to_file(pr, log)
+# pr = (p_name + "'s" + " health: " + str(p_health) + "; " + c_name + "'s" + " health: " + str(c_health))
+# boxer_KP1.pr_to_file(pr, log)
 
 while p_health > 0 or c_health > 0:
     if p_turn:
@@ -63,8 +71,12 @@ while p_health > 0 or c_health > 0:
         defend = str(ri(1, 3))
         if attack == defend:
             c_health = c_health
+            pr = 'Attack: ' + str(attack) + 'Defend: ' + str(defend)
+            boxer_KP1.pr_to_file(pr, log)
         else:
             c_health = c_health - damage
+            pr = 'Attack: ' + str(attack) + 'Defend: ' + str(defend)
+            boxer_KP1.pr_to_file(pr, log)
         if c_health <= 0:
             break
     if c_turn:
@@ -72,8 +84,12 @@ while p_health > 0 or c_health > 0:
         defend = input(str(print("Please choose the defend point: head(1), body(2) or legs(3)")))
         if attack == defend:
             p_health = p_health
+            pr = 'Attack: ' + str(attack) + 'Defend: ' + str(defend)
+            boxer_KP1.pr_to_file(pr, log)
         else:
             p_health = p_health - damage
+            pr = 'Attack: ' + str(attack) + 'Defend: ' + str(defend)
+            boxer_KP1.pr_to_file(pr, log)
         if p_health <= 0:
             break
 

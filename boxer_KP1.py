@@ -8,10 +8,12 @@
 
 Доп. задание: добавить выбор удара и выбор блока
 """
-
+import datetime
 
 def pr_to_file(pr, log):
     f = open(log, 'a')
     print(pr)
-    f.write(pr + '\n')
+    f.write(str(datetime.datetime.today()) + "\n" + pr + '\n' + '\n')
     f.close()
+
+# print (datetime.datetime.today())
