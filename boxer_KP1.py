@@ -9,11 +9,28 @@
 Доп. задание: добавить выбор удара и выбор блока
 """
 import datetime
+from textwrap import wrap
+width = 70
+
+
+
 
 def pr_to_file(pr, log):
     f = open(log, 'a')
-    print(pr)
-    f.write(str(datetime.datetime.today()) + "\n" + pr + '\n' + '\n')
+    # print(pr)
+
+    print('+-' + '-' * width + '-+')
+    for line in wrap(pr, width):
+        print('| {0:^{1}} |'.format(line, width))
+    print('+-' + '-' * width + '-+')
+
+    # f.write(str(datetime.datetime.today()) + "\n" + pr + '\n' + '\n')
+
+    f.write('+-' + '-' * width + '-+\n')
+    for line in wrap(pr, width):
+        f.write('| {0:^{1}} |\n'.format(line, width))
+    f.write('+-' + '-' * width + '-+\n')
+
     f.close()
 
 # print (datetime.datetime.today())

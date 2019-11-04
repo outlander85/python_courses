@@ -1,3 +1,14 @@
-import boxer_KP
+# from pprint import pprint
+# pprint('Hello World!')
 
-print(boxer_KP.Boxer(input(str(print("Hello, please enter your name:")))))
+from textwrap import wrap
+
+
+width = 100
+
+print('+-' + '-' * width + '-+')
+
+for line in wrap(pr, width):
+    print('| {0:^{1}} |'.format(line, width))
+
+print('+-' + '-' * width + '-+')

@@ -26,7 +26,7 @@ f.close()
 
 
 # receiving player's name
-p_name = input(str(print("Hello, please enter your name:")))
+p_name = input(str("Hello, please enter your name:"))
 p_name = p_name.capitalize()
 if p_name:
     print("Hello, " + p_name)
@@ -67,28 +67,28 @@ else:
 
 while p_health > 0 or c_health > 0:
     if p_turn:
-        attack = input(str(print("Please choose the hit point: head(1), body(2) or legs(3)")))
+        attack = input(str("Please choose the hit point: head(1), body(2) or legs(3)"))
         defend = str(ri(1, 3))
         if attack == defend:
             c_health = c_health
-            pr = 'Attack: ' + str(attack) + 'Defend: ' + str(defend)
+            pr = 'Attack: ' + str(attack) + ' Defend: ' + str(defend)
             boxer_KP1.pr_to_file(pr, log)
         else:
             c_health = c_health - damage
-            pr = 'Attack: ' + str(attack) + 'Defend: ' + str(defend)
+            pr = 'Attack: ' + str(attack) + ' Defend: ' + str(defend)
             boxer_KP1.pr_to_file(pr, log)
         if c_health <= 0:
             break
     if c_turn:
         attack = str(ri(1, 3))
-        defend = input(str(print("Please choose the defend point: head(1), body(2) or legs(3)")))
+        defend = input(str("Please choose the defend point: head(1), body(2) or legs(3)"))
         if attack == defend:
             p_health = p_health
-            pr = 'Attack: ' + str(attack) + 'Defend: ' + str(defend)
+            pr = 'Attack: ' + str(attack) + ' Defend: ' + str(defend)
             boxer_KP1.pr_to_file(pr, log)
         else:
             p_health = p_health - damage
-            pr = 'Attack: ' + str(attack) + 'Defend: ' + str(defend)
+            pr = 'Attack: ' + str(attack) + ' Defend: ' + str(defend)
             boxer_KP1.pr_to_file(pr, log)
         if p_health <= 0:
             break
