@@ -1,0 +1,13 @@
+12
+block - кубик
+board - стол
+bumbershoot - зонт
+canopy - зонт
+cube - кубик
+cuisine - стол
+desk - стол
+die - стол
+platen - стол
+table - стол
+tessera - кубик
+umbrella - зонт
